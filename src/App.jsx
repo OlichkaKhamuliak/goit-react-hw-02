@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { Description } from './components/Description';
 import { Options } from './components/Options';
@@ -6,10 +6,16 @@ import { Feedback } from './components/Feedback';
 import { Notification } from './components/Notification';
 
 export const App = () => {
-  const [feedbackTypesCount, setFeedbackTypesCount] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  const [feedbackTypesCount, setFeedbackTypesCount] = useState(() => {
+    const savedType = window.localStorage.getItem('typeCount');
+    if (savedType !== null) {
+      return JSON.parse(savedType);
+    }
+    return {
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    };
   });
 
   const handleFeedbackTypeChange = type => {
@@ -27,6 +33,10 @@ export const App = () => {
     });
   };
 
+  useEffect(() => {
+    window.localStorage.setItem('typeCount', JSON.stringify(feedbackTypesCount));
+  }, [feedbackTypesCount]);
+
   const { good, neutral, bad } = feedbackTypesCount;
 
   const totalFeedback = good + neutral + bad;
@@ -36,7 +46,7 @@ export const App = () => {
   const hasFeedback = totalFeedback > 0;
 
   return (
-    <div>
+    <div className="content">
       <Description />
       <Options
         handleFeedbackTypeChange={handleFeedbackTypeChange}
