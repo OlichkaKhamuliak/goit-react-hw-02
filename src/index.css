@@ -25,9 +25,26 @@ body {
   margin: 0;
 }
 
+@keyframes slidein {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('/src/assets/cafe.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: slidein 150s linear infinite;
 }
 
 ul {
@@ -50,37 +67,4 @@ img {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: rgb(81, 80, 80);
-  background-color: rgb(63, 63, 63);
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

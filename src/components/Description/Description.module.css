@@ -1,0 +1,51 @@
+.description {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.36), rgba(46, 47, 66, 0.474)),
+    url(../../assets/coffee.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.title,
+.text {
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+  max-width: 300px;
+}
+@media screen and (min-width: 768px) {
+  .description {
+    height: 320px;
+  }
+  .title,
+  .text {
+    max-width: none;
+  }
+  .title {
+    font-size: 80px;
+  }
+  .text {
+    font-size: 40px;
+    line-height: 1;
+    max-width: 700px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .description {
+    height: 350px;
+  }
+  .title {
+    font-size: 90px;
+  }
+  .text {
+    font-size: 50px;
+    max-width: 850px;
+  }
+}
