@@ -1,0 +1,77 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 23px;
+  border-radius: 5px;
+  max-height: 100px;
+  background-color: #bc7e45d3;
+}
+
+.feedback {
+  display: flex;
+  gap: 8px;
+  max-width: 280;
+}
+
+.total {
+  display: flex;
+  gap: 8px;
+}
+
+.good,
+.green {
+  color: rgb(18, 87, 18);
+  text-shadow: 1px 1px 2px rgba(18, 87, 18, 0.8);
+}
+.neutral,
+.orange {
+  color: yellow;
+  text-shadow: 1px 1px 2px rgba(255, 255, 0, 0.8);
+}
+.bad,
+.red {
+  color: rgb(85, 25, 25);
+  text-shadow: 1px 1px 2px rgba(85, 25, 25, 0.8);
+}
+.total {
+  color: rgb(80, 19, 80);
+  text-shadow: 1px 1px 2px rgba(80, 19, 80, 0.8);
+}
+.icon {
+  vertical-align: text-bottom;
+}
+
+@media screen and (min-width: 768px) {
+  .wrap {
+    gap: 8px;
+    font-size: 28px;
+  }
+
+  .feedback {
+    gap: 17px;
+  }
+
+  .total {
+    gap: 17px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-size: 45px;
+    max-height: 200px;
+  }
+
+  .feedback {
+    gap: 27px;
+  }
+
+  .total {
+    gap: 27px;
+  }
+}
