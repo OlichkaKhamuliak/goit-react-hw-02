@@ -1,4 +1,8 @@
 import css from './Options.module.css';
+import { BiHappyHeartEyes } from 'react-icons/bi';
+import { RiEmotionNormalLine } from 'react-icons/ri';
+import { FaRegSadCry } from 'react-icons/fa';
+import { BiReset } from 'react-icons/bi';
 
 const Button = ({ handleClick, children }) => {
   return (
@@ -11,10 +15,20 @@ const Button = ({ handleClick, children }) => {
 export const Options = ({ handleFeedbackTypeChange, handleReset, hasFeedback }) => {
   return (
     <div className={css.container}>
-      <Button handleClick={() => handleFeedbackTypeChange('good')}>Good</Button>
-      <Button handleClick={() => handleFeedbackTypeChange('neutral')}>Neutral</Button>
-      <Button handleClick={() => handleFeedbackTypeChange('bad')}>Bad</Button>
-      {hasFeedback && <Button handleClick={handleReset}>Reset</Button>}
+      <Button handleClick={() => handleFeedbackTypeChange('good')}>
+        Good <BiHappyHeartEyes className={css.icon} />
+      </Button>
+      <Button handleClick={() => handleFeedbackTypeChange('neutral')}>
+        Neutral <RiEmotionNormalLine className={css.icon} />
+      </Button>
+      <Button handleClick={() => handleFeedbackTypeChange('bad')}>
+        Bad <FaRegSadCry className={css.icon} />
+      </Button>
+      {hasFeedback && (
+        <Button handleClick={handleReset}>
+          Reset <BiReset className={css.icon} />
+        </Button>
+      )}
     </div>
   );
 };

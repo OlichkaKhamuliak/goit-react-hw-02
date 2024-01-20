@@ -62,7 +62,6 @@ export const App = () => {
       ) : (
         <Notification message="No feedback yet" />
       )}
-      {/* <p> Total: {good + neutral + bad}</p> */}
     </div>
   );
 };

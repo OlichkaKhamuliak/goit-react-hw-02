@@ -4,8 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.36), rgba(46, 47, 66, 0.474)),
-    url(../../assets/coffee.jpeg);
+  background-image: linear-gradient(#ac76438b, rgba(46, 47, 66, 0.474)), url(./coffee.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,6 +21,7 @@
 @media screen and (min-width: 768px) {
   .description {
     height: 320px;
+    margin-bottom: 50px;
   }
   .title,
   .text {
@@ -39,7 +39,9 @@
 
 @media screen and (min-width: 1280px) {
   .description {
-    height: 350px;
+    margin: 40px;
+    margin-bottom: 60px;
+    height: 420px;
   }
   .title {
     font-size: 90px;
